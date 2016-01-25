@@ -37,7 +37,7 @@ metadata['dev'] = scores.std()
 clf.fit(X, y)
 
 tmp = tempfile.NamedTemporaryFile(delete=False)
-joblib.dump(clf, tmp.name, compress=3)
+joblib.dump(clf, tmp.name, compress=7)
 
 m = hashlib.md5()
 m.update(metadata['seed'].to_bytes(10, sys.byteorder))
