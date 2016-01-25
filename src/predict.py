@@ -12,7 +12,7 @@ config.read('settings.cfg')
 paths = config['paths']
 
 db = pd.read_csv(paths['modelDB'])
-X = pd.read_csv(paths['test'], sep='|')
+X = pd.read_csv(paths['test'])
 
 if len(sys.argv) == 1:
     sys.argv.append(db.loc[db.index[-1], 'IdMd5'])

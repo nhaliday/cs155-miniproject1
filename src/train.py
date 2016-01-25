@@ -16,7 +16,7 @@ config = ConfigParser()
 config.read('settings.cfg')
 paths = config['paths']
 
-data = pd.read_csv(paths['train'], sep='|')
+data = pd.read_csv(paths['train'])
 
 seed = 3128
 rng = np.random.RandomState(seed)
