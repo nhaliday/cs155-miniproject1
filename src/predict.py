@@ -28,4 +28,6 @@ for id in sys.argv[1:]:
         model_path = Path(paths['model']) / db.loc[i, 'SerializedModel']
         clf = joblib.load(str(model_path))
         y = pd.DataFrame(clf.predict(X), index=pd.Index(np.arange(1, len(X)+1), name='Id'), columns=['Prediction'])
-        y.to_csv(str(Path(paths['predict']) / ('predict-' + model_path.stem + '.csv')))
+        fname = str(Path(paths['predict']) / ('predict-' + model_path.stem + '.csv'))
+        print(fname)
+        y.to_csv(fname)
